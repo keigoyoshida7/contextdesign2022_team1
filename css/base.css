@@ -2,7 +2,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 *,
 *::after,
 *::before {
-	box-sizing: border-box;
+	
 }
 
 body {
