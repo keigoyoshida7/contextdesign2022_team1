@@ -298,6 +298,7 @@ a:focus {
 .slide__subtitle,
 .slide__side {
 	display: none;
+	color:#000000;
 }
 
 .content {
