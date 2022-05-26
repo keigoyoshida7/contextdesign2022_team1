@@ -115,11 +115,8 @@ a:focus {
 
 /* Header */
 .codrops-header {
-	position: relative;
-	z-index: 100;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+text-align: right;
+padding-right: 3rem;
 }
 
 .codrops-header__title {
@@ -198,7 +195,7 @@ a:focus {
 	height: 80%;
 	align-self: center;
 	position: relative;
-	margin: 10px -40px 20px -40px;
+	margin: 0px -40px 20px -40px;
 	right: 50px;
 }
 
@@ -284,9 +281,11 @@ a:focus {
 
 .slide__number {
 	display: block;
-	font-size: 2rem;
+	font-size: 1rem;
 	font-weight: bold;
-	color:#000000;
+	color:#000;
+    padding-top:30rem;
+        ;
 }
 
 .slide__number::before {
@@ -363,7 +362,7 @@ a:focus {
 
 .content__subtitle {
 	margin: 0 0 0.2rem;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	font-weight: normal;
 }
 
@@ -379,6 +378,50 @@ a:focus {
 	opacity: 0;
 }
 
+@media (max-width: 599px) {
+   .slide__img { width: 100px; height: 550px; }
+    .codrops-header {
+text-align: right;
+padding-right: 4rem;
+}
+.content__item--current,
+.content__item--current ~ .content__close {
+	pointer-events: auto;
+    text-align: right;
+    padding-top: 10rem;
+}
+}
+@media (min-width: 600px) and (max-width: 959px) {
+   .slide__img { width: 135px; height:750px; }
+    .codrops-header {
+text-align: right;
+padding-right: 9rem;
+}
+}
+@media (min-width: 960px) {
+   .slide__img { width: 190px; height:1000px; }
+    .codrops-header {
+text-align: right;
+padding-right: 12rem;
+padding-top:1rem;
+       
+}
+     body {
+		padding: 0;
+	}
+	.frame {
+		top: 0;
+		display: grid;
+		align-items: start;
+		justify-items: end;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		grid-template-areas: '... header';
+
+}
+
+    
+
 @media screen and (min-width: 53em) {
 	body {
 		padding: 0;
@@ -391,11 +434,14 @@ a:focus {
 		grid-template-columns: 100%;
 		grid-template-rows: 100%;
 		grid-template-areas: '... header';
+
 	}
 	.codrops-header {
 		grid-area: header;
 		padding: 1rem 0.5rem;
 		display: block;
+        text-align: right;
+
 	}
 	.codrops-header__title {
 		padding: 0 0.5rem;
@@ -465,7 +511,7 @@ a:focus {
 		font-size: 7vw;
 	}
 	.content__subtitle {
-		font-size: 1.15rem;
+		font-size: 0.8rem;
 		margin-bottom: 7.5vh;
 	}
 	.content__text {
@@ -476,4 +522,5 @@ a:focus {
 		text-align: justify;
 	}
 }
+
 
