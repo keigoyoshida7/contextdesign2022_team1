@@ -303,7 +303,7 @@ a:focus {
 }
 
 .content {
-	position: fixed;
+	position: ;
 	top: 10rem;
 	left: 0;
 	width: 100%;
@@ -447,8 +447,8 @@ a:focus {
 	}
 	.content__item {
 		padding: calc(10vh + 5rem) 0 7vh;
-		width: 50.5%;
-		right: 7.5%;
+		width: 60%;
+		right: 2%;
 		overflow: visible;
 	}
 	.content__close {
@@ -476,3 +476,4 @@ a:focus {
 		text-align: justify;
 	}
 }
+
