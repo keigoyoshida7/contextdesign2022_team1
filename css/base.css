@@ -379,7 +379,7 @@ padding-right: 3rem;
 }
 
 @media (max-width: 599px) {
-   .slide__img { width: 100px; height: 550px; }
+   .slide__img { width: 104px; height: 550px; }
     .codrops-header {
 text-align: right;
 padding-right: 4rem;
