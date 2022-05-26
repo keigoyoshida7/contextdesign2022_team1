@@ -1,855 +1,525 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>memories</title>
-		<meta name="description" content="A triple view diagonal slideshow with content preview." />
-		<meta name="keywords" content="" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<script>
-		document.documentElement.className = "js";
-		var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-		</script>
-	</head>
-	<body class="loading">
-		<svg class="hidden">
-			<symbol id="icon-arrow" viewBox="0 0 24 24">
-				<title>arrow</title>
-				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
-			</symbol>
-			<symbol id="icon-drop" viewBox="0 0 24 24">
-				<title>drop</title>
-				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
-				<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
-			</symbol>
-			<symbol id="icon-longarrow" viewBox="0 0 54 24">
-				<title>longarrow</title>
-				<path d="M.42 11.158L12.38.256c.333-.27.696-.322 1.09-.155.395.166.593.467.593.903v6.977h38.87c.29 0 .53.093.716.28.187.187.28.426.28.716v5.98c0 .29-.093.53-.28.716a.971.971 0 0 1-.716.28h-38.87v6.977c0 .416-.199.717-.592.903-.395.167-.759.104-1.09-.186L.42 12.62a1.018 1.018 0 0 1 0-1.462z" />
-			</symbol>
-			<symbol id="icon-navarrow" viewBox="0 0 408 408">
-				<title>navarrow</title>
-				<polygon fill="#fff" fill-rule="nonzero" points="204 0 168.3 35.7 311.1 178.5 0 178.5 0 229.5 311.1 229.5 168.3 372.3 204 408 408 204"></polygon>
-			</symbol>
-		</svg>
-		<main>
-			<div class="frame">
-				<header class="codrops-header">
-					<h1 class="codrops-header__title"></h1>
-					
-				</header>
-			</div>
-			<div class="slideshow">
-				<div class="slideshow__deco"></div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/1.jpg);"></div>
-					</div>
-					<div class="slide__side">cosme</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">1</span>
-						<h3 class="slide__title"> </h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/2.jpg);"></div>
-					</div>
-					<div class="slide__side">cosme</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">2</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/3.jpg);"></div>
-					</div>
-					<div class="slide__side">cosme</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">3</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/4.jpg);"></div>
-					</div>
-					<div class="slide__side">cosme</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">4</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/5.jpg);"></div>
-					</div>
-					<div class="slide__side">cosme</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">5</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/6.jpg);"></div>
-					</div>
-					<div class="slide__side">CD</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">6</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/7.jpg);"></div>
-					</div>
-					<div class="slide__side">CD</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">7</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/8.jpg);"></div>
-					</div>
-					<div class="slide__side">CD</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">8</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/9.jpg);"></div>
-					</div>
-					<div class="slide__side">CD</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">9</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/10.jpg);"></div>
-					</div>
-					<div class="slide__side">CD</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">10</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/11.jpg);"></div>
-					</div>
-					<div class="slide__side">Book</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">11</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/12.jpg);"></div>
-					</div>
-					<div class="slide__side">Book</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">12</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/13.jpg);"></div>
-					</div>
-					<div class="slide__side">Book</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">13</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/14.jpg);"></div>
-					</div>
-					<div class="slide__side">Book</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">14</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-                <div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/15.jpg);"></div>
-					</div>
-					<div class="slide__side">Book</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">15</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-		<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/16.jpg);"></div>
-					</div>
-					<div class="slide__side">Present</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">16</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-		<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/17.jpg);"></div>
-					</div>
-					<div class="slide__side">Present</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">17</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-		<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/18.jpg);"></div>
-					</div>
-					<div class="slide__side">Present</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">18</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-		<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/19.jpg);"></div>
-					</div>
-					<div class="slide__side">Present</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">19</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-		<div class="slide">
-					<div class="slide__img-wrap">
-						<div class="slide__img" style="background-image: url(img/20.jpg);"></div>
-					</div>
-					<div class="slide__side">Present</div>
-					<div class="slide__title-wrap">
-						<span class="slide__number">20</span>
-						<h3 class="slide__title"></h3>
-						<h4 class="slide__subtitle"></h4>
-					</div>
-				</div>
-				<button class="nav nav--prev">
-					<svg class="icon icon--navarrow-prev">
-						<use xlink:href="#icon-navarrow"></use>
-					</svg>
-				</button>
-				<button class="nav nav--next">
-					<svg class="icon icon--navarrow-next">
-						<use xlink:href="#icon-navarrow"></use>
-					</svg>
-				</button>
-			</div>
-			<div class="content">
-				<div class="content__item">
-					<span class="content__number">1</span>
-					<h3 class="content__title">MACのリップ</h3>
-					<h4 class="content__subtitle">￥3300 2018年 友達</h4>
-					<div class="content__text">
-						一番初めに使った化粧品はお母さんが
-						<br>使ってたちふれのリップだった。
-						<br>ちょっと大人になった気分で嬉しかったけど化粧品の独特な香りがして
-						<br>今でも微かにその匂いを覚えてる。
-						<br>でも高一の時に初めてデパコスのマックのリップをもらってすごく嬉しかった。
-						<br>それはちょっと甘いいい匂いがして
-                        <br>お気に入りで、
-						<br>それがなくなってもマックのリップは
-                        <br>今でも必ず一本は常備してる。
-					</div>
-				</div>
-				<div class="content__item">
-					<span class="content__number">2</span>
-					<h3 class="content__title">リキッドファンデ</h3>
-					<h4 class="content__subtitle">コスメショップ 2011年</h4>
-					<div class="content__text">
-						初めて自分で買ったのは
-                        <br>リキッドファンデだった。
-						<br>初めて使うからどのくらいの量を使えばいいのかわからなくて、
-						<br>沢山塗りすぎて厚塗りになったのを
-                        <br>覚えてる。
-						<br>お姉ちゃんがいてメイクしてるのを
-                        <br>見てたから、
-						<br>自分も始めるのは早い方だったと思う。
-						<br>お母さんの化粧品も全然使ったりしてたけど、
-						<br>壊さない限り怒らないで自由にさせて
-                        <br>くれてた。
-						<br>だから今でもいい化粧品あったら
-                        <br>貸し借りして楽しんでる！
-					</div>
-				</div>
-				<div class="content__item">
-					<span class="content__number">3</span>
-					<h3 class="content__title">リップ</h3>
-					<h4 class="content__subtitle"></h4>
-					<div class="content__text">
-						僕はお母さんのリップを
-                        <br>クレヨンがわりにして使って
-                        <br>怒られたのが記憶に残ってる。
-						<br>それでお母さんに絵を描いてプレゼントしようと思ったんだけど、
-						<br>リップで絵を描いてる途中でバレて
-                        <br>怒られた！今では笑い話だけど。
-						<br>最近は自分もファンデとかリップを
-                        <br>使うこともあるから、
-						<br>その大切さはわかるなあ。
-                        <br>買う時は少し緊張したけど
-						<br>初めてファンデ使った時は
-                        <br>コンプレックスだった肌が綺麗に見えて感動した。
-					</div>
-				</div>
-				<div class="content__item">
-					<span class="content__number">4</span>
-					<h3 class="content__title">アイシャドウ</h3>
-					<h4 class="content__subtitle">CHANEL　￥7920　2017年4月</h4>
-					<div class="content__text">
-						私はバレエをやっていて小さい頃から
-                        <br>舞台メイクはしてたけど、
-						<br>普通のメイクはあんまりしたことが
-                        <br>なかった。
-						<br>でもお母さんが使ってたラメが入った
-                        <br>アイシャドウとかすごく憧れて
-						<br>いらなくなったのをもらったりして
-                        <br>遊んでた。
-						<br>高校生になる時にお母さんが
-                        <br>シャネルのアイシャドウを
-                        <br>プレゼントしてくれて、
-						<br>はじめてのデパコスだったし嬉しくて
-                        <br>当分の間は使うのが勿体無くて
-                        <br>飾ってた。
-						<br>今でもデパコスはテンションが
-                        <br>上がるけど、
-						<br>やっぱり初めて持った時は
-                        <br>一番嬉しかった！
-					</div>
-				</div>
-				<div class="content__item">
-					<span class="content__number">5</span>
-					<h3 class="content__title">リップ</h3>
-					<h4 class="content__subtitle"></h4>
-					<div class="content__text">
-						中学生くらいの時、テイラーに憧れて
-                        <br>真っ赤な口紅を買った。
-						<br>他にメイクもしてないし、
-                        <br>ビビットカラーだったから
-                        <br>信じられないくらい
-                        <br>唇だけ浮いてたけど、
-                        <br>当時はそれですごい喜んでた。
-						<br>今もしその写真が出てきたら
-                        <br>本当に恥ずかしい。
-						<br>今はイエベとかブルベとか
-                        <br>自分の肌に似合うコスメばっかり
-                        <br>探してしまうけど、
-						<br>自分が使ってて
-                        <br>ハッピーな気持ちになれるっていうのも大事だなって思った。
-					</div>
-				</div>
-				<div class="content__item">
-					<span class="content__number">6</span>
-					<h3 class="content__title">Perfect to Me <br>/ Anne-Marie</h3>
-					<h4 class="content__subtitle">タワーレコード ￥250 2019年5月 長谷川湧也　（大学生）</h4>
-					<div class="content__text">
-						「どんなに頑張っても、
-                        <br>人から認めてもらえなかったり、
-						<br>結果がついてこなかった時に、
-                        <br>この曲に出会った。
-						<br>自分が自分であることの大切さや、
-                        <br>結果が全てではないこと、
-						<br>全ての他人から
-                        <br>いい評価をもらう必要なんてない
-                        <br>ということを気づかせてくれる歌詞に
-                        <br>心が刺された。
-					</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">7</span>
-					<h3 class="content__title">Home <br>/ アンジェラ・<br>アキ</h3>
-					<h4 class="content__subtitle">TSUTAYA ￥2500 2006年11月 大野哲平　（大学生）</h4>
-					<div class="content__text">
-						「幼稚園生の頃の一番楽しかった時間は家族と外出。
-						<br>うちの家族は電車ではなく、
-                        <br>車での移動が大半で、その車内で
-                        <br>ずっと流していた。
-						<br>当時はただ心地よく聴いていただけの
-                        <br>曲だが、今聞くと、その頃の情景が
-                        <br>脳裏に蘇り、
-                        <br>もうその頃には戻れないという
-						<br>切なさと懐かしさが
-                        <br>優しい気持ちにさせてくれる。
-						<br>又、今聞いてみると、
-                        <br>当時は気づかなかった歌詞の意味に
-                        <br>気づく事ができ、
-						<br>その歌詞の内容も、故郷に対する
-                        <br>過去回想なので、
-						<br>さらにその気持ちを強めてくれる。」</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">8</span>
-					<h3 class="content__title">One More Light <br>/ Linkin Park</h3>
-					<h4 class="content__subtitle">Amazon ￥200 2017年5月 山形慎太郎　（大学生）</h4>
-					<div class="content__text">
-						「自分が一番好きなロックバンド、
-                         <br>Linkin Parkのバラードで、
-						<br>一人一人の命の大切さを歌っている。
-                        <br>軽んじる事のできる命は絶対になく、
-						<br>今自分達の周りにいる人間が
-                        <br>当たり前に居てくれることの尊さを
-                        <br>歌っている。
-						<br>しかし、この曲のリリース後
-                        <br>間もなくして、
-						<br>このバンドのフロントマンであった
-                        <br>チェスターが亡くなってしまい、
-						<br>この曲は彼の遺言のようなものに
-                        <br>なってしまった。
-						<br>この曲の意味を、彼が身をもって
-                        <br>教えてくれたようにも思える。
-						<br>当時は悲しくて
-                        <br>ずっとこの曲を聴いていた」
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">9</span>
-					<h3 class="content__title">27 <br>/ Super Beaver</h3>
-					<h4 class="content__subtitle">Amazon ￥2970 2017年2月7日 中村薫　（大学生）</h4>
-					<div class="content__text">
-						「このアルバムは全ていい曲だけど、
-						<br>その中でも個人的に好きなのが
-                        <br>『２７』と『人として』。
-						<br>Super Beaverは歌詞が好きで、
-                        <br>昔から聞いていたが、
-						<br>この２曲は、その中でもダントツに
-                        <br>歌詞が深いと思う。
-						<br>人としてカッコよく生きたい
-                        <br>という気持ちが少しでもある人間なら、
-						<br>この曲を聴いて心震わせる気がする。
-						<br>好きな歌詞の部分を抜粋して紹介したいところだが、
-						<br>本当に頭からケツまで全ていいので、
-                        <br>ぜひたくさんの人にそれを
-                        <br>確かめてみてほしい。
-						<br>『大人になるって、
-                        <br>こういう事なんだろうな』
-                        <br>と、この曲を聞いてから明確に思えた。
-						<br>本当にみんなに聞いてみてほしい。」
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">10</span>
-					<h3 class="content__title">Justice <br>/ Justin Bieber</h3>
-					<h4 class="content__subtitle">タワーレコード グランツリー武蔵小杉店 ￥2190 2022年1月18日 佐藤京平　（大学生）</h4>
-					<div class="content__text">
-						「今までCDなんて買った事なかったし、
-						<br>今時サブスクがあるから必要もない
-                        <br>けど、
-						<br>このアルバムだけは、
-                        <br>形として残して置かないと後悔する
-                        <br>と思って、買っちゃった。
-						<br>リリースされた当初は
-                        <br>そんな予定じゃなかったけど、
-						<br>サブスクで聞いてみて、
-                        <br>アルバム全ての曲が心地よいくらいに
-                        <br>体にスッと入って、
-						<br>そこからはずっとリピートした。
-                        <br>それくらいいい作品。」
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">11</span>
-					<h3 class="content__title">星のオルフェウス</h3>
-					<h4 class="content__subtitle">￥980</h4>
-					<div class="content__text">
-						子供心にすごく残ってて、
-                        <br>なんかこうなんていうの、
-						<br>世の中の儚さとか、
-                        <br>愛とか、
-                        <br>子供ながらにその死生観とかさ、
-						<br>その大事にする気持ち、
-                        <br>男の人と女の人になる、
-                        <br>そういうことなんだとか、
-						<br>なんかそういうのを本で学んで、
-                        <br>んー誰か愛しい人を助けに行くのに
-                        <br>地獄に行かなきゃいけないとか、
-						<br>なんかそういうのあるじゃん。
-						<br>今でもさ、なんかなんていうの、
-                        <br>二人で歩いて、
-                        <br>絶対後ろ振り返っちゃいけない、
-						<br>そうすると後ろの人が消えちゃう
-                        <br>とかさ、
-                        <br>なんかそういうなんか観念みたいなさ、
-						<br>そういうのを本というか
-                        <br>オールカラーの方のブック、
-						<br>それは家にあるけど、
-                        <br>大事にしているけど、
-                        <br>それともう一つ世界の童話っていう、
-						<br>ま当然美しい話もあるけど
-                        <br>残酷なこともあって、
-                        <br>戦争とかさ、
-						<br>そういうなんか知の巨人みたいな
-                        <br>凄く分厚い本に
-                        <br>子供のころって憧れるじゃん
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">12</span>
-					<h3 class="content__title">Q&A</h3>
-					<h4 class="content__subtitle">￥660</h4>
-					<div class="content__text">
-						恩田陸のQ&Aっていう小説です。
-						<br>僕人生で初めて
-                        <br>文庫本一冊を1日で読みきったのね。
-						<br>だからめっちゃ覚えてるっていう。
-                        <br>しかも寝る前に最後読んだのね。
-						<br>最後の方はなんか、
-						<br>商業施設の中で血がついたぬいぐるみを少女が引っ張ってる
-                        <br>っていうところだったの。
-						<br>このシーンについて
-                        <br>めっちゃ書かれててね。
-                        <br>ひどく怖いじゃないですか。
-						<br>でそのまま寝るから
-                        <br>当然眠れなくなるんですけど。（笑）
-						<br>すごい覚えてますね。
-                        <br>この前読みました、久しぶりに。
-                        <br>やっぱり怖かったですね。
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">13</span>
-					<h3 class="content__title">虹の岬の喫茶店</h3>
-					<h4 class="content__subtitle">￥781</h4>
-					<div class="content__text">
-						最初に読んだ本なんだけど、
-                        <br>虹の岬の喫茶店って言ったかな、確か。
-						<br>山場となるところが
-                        <br>最後のシーンにあって、
-                        <br>そのシーン読んだときに、
-						<br>普通だったら
-                        <br>ちょっと心が温まるだけなのに、
-                        <br>だと思うんだけど、
-						<br>そん時の自分の心が
-                        <br>意味わからないくらい動いて。
-						<br>すごいなんか心ががじんわり、
-						<br>心があるとしたら
-                        <br>心の周りちょっとだけに
-                        <br>なんか温かいものが溢れる感じだと
-                        <br>思うんだけど、
-						<br>すごい、
-                        <br>大量にじんわりの範囲が
-                        <br>めちゃめちゃ広く、なんていうのかな、
-						<br>すごいめちゃめちゃ温かくなって。
-						<br>それでなぜか泣いてて。
-                        <br>なんで泣いたのかわかんないけど。
-						<br>なんか、コロナのあれで
-                        <br>センチメンタルになってたのかも
-                        <br>わかんないけど。
-						<br>外の世界がすごい恋しいなって
-                        <br>思いながら読んだ記憶がある。
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">14</span>
-					<h3 class="content__title">パスワード<br>シリーズ</h3>
-					<h4 class="content__subtitle">￥715</h4>
-					<div class="content__text">
-						あれパスワードシリーズっていう
-                        <br>青い鳥文庫の、
-                        <br>なんか子供向けのなんかありました。
-						<br>それがめちゃめちゃ好きだったな。
-                        <br>あれ未だに覚えてる。
-                        <br>それですね。
-						<br>あもう無限に覚えてますねこれは。
-                        <br>人生で一番ハマってた
-                        <br>小説のシリーズだからだね。確か。
-						<br>しかも一番最初にハマってたからだね。
-						<br>結局子供の頃のそういう時期に
-                        <br>見てたものってなんか、
-                        <br>残るよねっていう。
-						<br>なんか、だからこれから多分、
-                        <br>だから結局その、何、
-						<br>あのボトルネックとかさ、
-                        <br>あと屍人荘の殺人とか、
-						<br>結構面白いの読んだけど、
-                        <br>住野よるとかも何冊か読んだけど、
-						<br>なんか結局これが
-                        <br>一番残ってはいるよね。っていう。
-						<br>面白さは、
-                        <br>面白さは多分最近読んだやつの方が
-                        <br>面白いんだけど。
-						<br>忘れないのだとこっちの方が高いよね。なんかまシリーズを包括してって感じ。
-			</div>
-				</div>
-                <div class="content__item">
-					<span class="content__number">15</span>
-					<h3 class="content__title">名探偵夢水清志郎<br>事件ノート</h3>
-					<h4 class="content__subtitle">￥825</h4>
-					<div class="content__text">
-						僕はぁ、なんだっけ、清水清志郎、
-                        <br>あのはやみねかおるの。
-						<br>あれが一番、夢水か。夢水。
-                        <br>なんて言ってたっけ、まいいや。
-						<br>なんか入りは、このシリーズだったと
-                        <br>思うんだけど、
-						<br>そのはやみねかおるさんの作品、
-                        <br>大体全部好きで、
-						<br>でそんなかでも
-                        <br>多分最初に読んだってのもあるし、
-                        <br>なんだろう、まぁ、
-						<br>あの主人公
-                        <br>めちゃめちゃ性格酷いんだけど、
-                        <br>根に持ってるところはいいんだよね。
-						<br>なんか、真実は解き明かさない、
-                        <br>ん、わざとん、なんていうの、
-                        <br>嘘ついて、
-						<br>でもみんながハッピーになる方が
-                        <br>いいじゃんみたいな。
-                        <br>すごいてきとーに言ってるけど。
-						<br>真実を解き明かしちゃうと
-                        <br>悲しくなっちゃう人がいるから、
-                        <br>あえて黙るみたいな。
-						<br>そういうのが好きだったかな。
-			</div>
-				</div>
-	        <div class="content__item">
-					<span class="content__number">16</span>
-					<h3 class="content__title">日焼け止めと<br>リップクリーム</h3>
-					<h4 class="content__subtitle">ロクシタン　￥2300 2021年3月10日 平野杏樹（大学生） </h4>
-					<div class="content__text">
-						私、ゼミの先輩に
-                         <br>誕生日渡そうと思って、
-						<br>前々から結構あげようと思ってたものがあったんですけど、
-						<br>トラの可愛いイラストの
-                        <br>スマホケースか、
-						<br>onenovaオフィスにおける絨毯みたいなのをあげようと思ってたんですけど、
-                        <br>可愛すぎるかなと思って。
-						<br>ふらふら新宿のお店を見てて、
-                        <br>ロクシタンに立ち寄って、
-                        <br>私もロクシタンあんまり買わないけど、
-						<br>もらった事があって
-                        <br>それがすごい良かったから、
-						<br>お店に入ったら店員さんが色々
-                        <br>「年上の方にあげるんですか？」
-                        <br>みたいなのを聞いてくれて。
-						<br>結局、たいがさんには
-                        <br>リップクリームで、
-                        <br>りりあんさんには
-                        <br>いい匂いのする日焼け止めみたいなのをあげて。
-						<br>その日あげるもの、買いたいものを
-                        <br>決めずに行ったけど
-						<br>自分的に良い買い物できたなーって
-                        <br>思ったのが結構最近覚えてます。
-						<br>渡した時覚えてる？
-						<br>リップクリームちょうどない時に
-                        <br>渡せたので良かったです。
-						<br>当日たまたまないみたいなこと
-                        <br>言ってて、
-						<br>ちょうどタイミングが良くて、
-                        <br>嬉しかったです。
-			</div>
-				</div>
-		 <div class="content__item">
-					<span class="content__number">17</span>
-					<h3 class="content__title">ホットアイマスク＆<br>クノールのスープ</h3>
-					<h4 class="content__subtitle">Amazon 2020年3月　後田将人（大学生）</h4>
-					<div class="content__text">
-						弟が18才の時だから、
-                        <br>コロナの時の弟に贈った話で行くと、
-						<br>ちょうど18才になるときが、
-                        <br>受験生だから、遊びに行くとかなくて、
-						<br>コロナがひどい2月とか3月だっから、
-                        <br>会ってなくて。
-                        <br>受験生だっから遊ぶものとか贈るのも
-                        <br>違うなと思って。
-						<br>Amazonで自分が受験の時に
-                        <br>欲しかったものとかを
-                        <br>小分けにして送って。
-						<br>夜勉強するだろうから、
-                        <br>クノールのスープとか。
-						<br>メグリズムのホットアイマスクとか、
-                        <br>メンソール入ってて
-                        <br>勉強途中にやったらスーッとするやつ
-                        <br>とか。
-						<br>弟とバカ仲悪かったのよ。
-                        <br>素直にはなりきれないから、
-						<br>何が欲しいとか聞けなかったんだけど、
-                        <br>こういうのあったら
-                        <br>「頑張れ」とは言いたくなかった。
-						<br>親からのプレッシャーがあったのは
-                        <br>わかってたから、
-                        <br>「頑張れ」とかは言わず、
-						<br>休む間とかちゃんと作れよ、
-                        <br>とかのメッセージをつけて送って。
-						<br>他に豪華にやるとかあったけど、
-                        <br>それ以外の時はLINEもしないし。
-						<br>会話が多いタイプではないけど、
-                        <br>そういう贈り方をしたなとかはあったりして。
-						<br>弟から誕生日プレゼントもらったこと
-                        <br>ない。
-                        <br>でも僕的には
-                        <br>そういう時は祝いたいという気持ちが
-                        <br>強い。
-						<br>コミュニケーション取ってなくても
-                        　<br>贈ろうという気持ちはあって。
-						<br>未だに、壁にAmazonのメッセージが
-                        <br>貼ってあって。
-						<br>壁に画鋲で刺してあって。
-                        <br>普通によかったんじゃんって思って。
-			</div>
-			        </div>
-		 <div class="content__item">
-					<span class="content__number">18</span>
-					<h3 class="content__title">ナイキの<br>ヘアバンド</h3>
-					<h4 class="content__subtitle">スポーツショップ　￥869 2018年 ゼミの後輩</h4>
-					<div class="content__text">
-						1年生の時に、私ダンス部に入ってて、
-                        <br>文化祭の日だったんだけど、
-						<br>出し物でダンス部の発表みたいなのが
-                        <br>あって。数ヶ月前から練習して。
-						<br>ついに明日だってなって、前日かな？
-                        <br>私のすっごい仲良かった友達が、
-                        <br>急に骨折しちゃって。
-						<br>明日じゃない？ってなって。
-                        <br>その子もダンス部だったから
-                        <br>全部練習一緒にしていたし、
-						<br>一番仲良かったから結構ショックで。
-                        <br>でもその子は「大丈夫だよ、」
-                        <br>みたいな、
-                        <br>なんかよくわからなかったんだけど、
-						<br>その時にどうにかしなきゃ！って
-                        <br>思ったんだよね。
-                        <br>どうにもならないんだけど。
-						<br>ナイキの白いヘアバンドみたいな、
-                        <br>あれを私の分とその人の分を買って。
-						<br>で、それを次の日に渡したのね。
-                        <br>そしたら、
-                        <br>なんかすごい喜んでくれてて。
-						<br>そんなに回れないからさ、渡してる時、学校の外。
-						<br>これ多分思い出付きで好きなんだけど、すごい喜んでくれて。
-						<br>「私こういうの、
-                        <br>そんなに泣かないタイプだし、
-                        <br>悲しいなって思えてなかったんだけど、
-						<br>必死に急いで買った様子を
-                        <br>思い出したら、
-                        <br>すごい悲しくなったし、泣けてきた。」って言われて。
-						<br>その時に、自分の姿も客観視して
-                        <br>思い出して、
-                        <br>プレゼントを持っていこうとした
-                        <br>私とか、その子に対する想いとか
-                        <br>客観視されて、うわあ良いってなって、すごい覚えているな。
-						<br>いろいろな思い出付きだからだと
-                        <br>思うけど。
-			</div>
-			        </div>
-		 <div class="content__item">
-					<span class="content__number">19</span>
-					<h3 class="content__title">お手紙</h3>
-					<h4 class="content__subtitle">￥0 2022年3月 ゼミの後輩 </h4>
-					<div class="content__text">
-						私卒業式前日にお父ちゃんに
-                        <br>手紙書いたんだけど。
-                        <br>ライトな手紙とかは書いてて、
-						<br>私、お父ちゃんと話すとき、
-                        <br>緊張しちゃう系だから、お母ちゃんには想い伝える場面あったけど、
-						<br>お父ちゃんにはなかったから。
-                        <br>卒業式の2週間前に無理矢理家を出て。
-						<br>前日に「ダディハグ〜」って言っても「いいよ」って感じで。
-                        <br>行ってくるよっていうんだけど、
-						<br>いいよって感じで。
-                        <br>拗ねちゃってる、って感じで
-                        <br>家出てきちゃって。
-						<br>引っ越し決めた3週間くらい
-                        <br>口聞いてくれなくて、
-                        <br>そこから引っ越しちゃって。
-						<br>元気にやってるのかって
-                        <br>電話で話したりしてたんだけど。
-						<br>卒業式の時に3枚くらいお手紙書いて、
-                        <br>久しぶりだったし、袴だったから
-                        <br>会った時からうるうるしてて、
-						<br>「いいねえ目立つね〜
-                        <br>似合ってんじゃん」
-                        <br>みたいな感じで、
-                        <br>結構バタバタだったから、
-						<br>その時に、こぼれそう
-                        <br>うるうるになってたの。
-                        <br>その後解散して、
-                        <br>その後、感想何も来なくて。
-						<br>次の日くらいにママに電話してたら、「ダディに渡したんでしょ聞いたよ〜」って言われて。
-						<br>「だめだなあ、手紙読んで
-                        <br>涙が止まらなかった〜
-                        <br>あの子は育ったよ」
-                        <br>みたいな。
-						<br>絶対言わないのに、
-                        <br>ママちゃんにはその話してて。
-                        <br>ダディの宝箱に今その手紙は入ってる。
-			</div>
-			        </div>
-		 <div class="content__item">
-					<span class="content__number">20</span>
-					<h3 class="content__title">ブラックサンダー　<br>とうもろこし味</h3>
-					<h4 class="content__subtitle">コンビニ ￥40 2018年6月 ゼミの後輩</h4>
-					<div class="content__text">
-						父の日に学校帰りに
-                        <br>セブンイレブンに寄って、
-                        <br>ブラックサンダーのとうもろこしの味
-                        <br>が売ってて、
-						<br>私当時
-                        <br>ほとんど買い食いとかしないタイプで、コンビニに寄ったら、
-						<br>お母さんに「今日コンビニ寄ったよ！」っていう高校生だったので。
-						<br>とうもろこしのブラックサンダー
-                        <br>買って、
-                        <br>お母さんに買ってきたって
-                        <br>父の日だから、
-						<br>それで、お父さん食べたら、
-                        <br>「もらえて嬉しいけど、味は微妙だね」って。
-						<br>言ってたけど、お父さん
-                        <br>「次女がくれました」
-                        <br>ってインスタあげてて。
-						<br>お金なかったんで、
-                        <br>安くて物珍しいのを買いました。
-				</div>
-			</div>
-				<button class="content__close">
-					<svg class="icon icon--longarrow">
-						<use xlink:href="#icon-longarrow"></use>
-					</svg>
-				</button>
-			</div>
-		</main>
-		<script src="js/imagesloaded.pkgd.min.js"></script>
-		<script src="js/charming.min.js"></script>
-		<script src="js/TweenMax.min.js"></script>
-		<script src="js/demo.js"></script>
-	</body>
-</html>
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block;}audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;height:0;}[hidden]{display:none;}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}a:focus{outline:thin dotted;}a:active,a:hover{outline:0;}h1{font-size:2em;margin:0.67em 0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}mark{background:#ff0;color:#000;}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em;}pre{white-space:pre-wrap;}q{quotes:"\201C" "\201D" "\2018" "\2019";}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:0;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0;}button,input{line-height:normal;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}
+*,
+*::after,
+*::before {
+	
+}
 
+body {
+	--color-text: #f1f1f1;
+    --color-bg: #0c0c0c;
+    --color-link: #1ab3de;
+    --color-link-hover: #f1f1f1;
+	--color-deco: #141414;
+	--color-side: #353535;
+	font-family: Futura, "futura-pt", sans-serif;
+	min-height: 100vh;
+	color: #57585c;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-top: 10rem;
+}
+
+/* Page Loader */
+.js .loading::before {
+	content: '';
+	position: fixed;
+	z-index: 100000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 100000;
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	pointer-events: none;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-link-hover);
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+.message {
+	position: relative;
+	z-index: 100;
+	display: none;
+	padding: 1em;
+	text-align: center;
+	color: var(--color-bg);
+	background: var(--color-text);
+}
+
+/* Icons */
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+.frame {
+	position: fixed;
+	z-index: 10000;
+	top: 5rem;
+	left: 0;
+	width: 100%;
+	max-width: none;
+	min-height: 0;
+	height: 100vh;
+	padding: 1rem;
+	pointer-events: none;
+}
+
+.frame a {
+	pointer-events: auto;
+}	
+
+/* Header */
+.codrops-header {
+text-align: right;
+padding-right: 3rem;
+}
+
+.codrops-header__title {
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1;
+	margin: 0;
+}
+
+/* Top Navigation Style */
+.codrops-links {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	white-space: nowrap;
+}
+
+.github {
+	display: block;
+	padding: 0.25em;
+	margin: 0 0.25rem;
+}
+
+.codrops-icon {
+	display: inline-block;
+	padding: 0.25em;
+	margin: 0.25em 0 0 0;
+}
+
+.slideshow {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	height: calc(100vh - 10rem);
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-column-gap: 0.5%;
+	grid-template-rows: 100%;
+	grid-template-areas: '... slide ...';
+}
+
+.slide {
+	width: 100%;
+	display: flex;
+	pointer-events: none;
+	cursor: pointer;
+	position: relative;
+	height: 100%;
+	grid-area: slide;
+}
+
+.slideshow--previewopen .slide {
+	cursor: default;
+}
+
+.slide--current {
+	pointer-events: auto;
+}
+
+.slide__img-wrap {
+	width: 100%;
+	overflow: hidden;
+	z-index: 100;
+	height: 100%;
+	top: 10%;
+	position: absolute;
+}
+
+.slideshow__deco {
+	grid-area: slide;
+	background: var(--color-deco);
+	width: 100%;
+	height: 80%;
+	align-self: center;
+	position: relative;
+	margin: 0px -40px 20px -40px;
+	right: 50px;
+}
+
+.nav {
+	position: absolute;
+	background: none;
+	width: 3rem;
+	height: 3rem;
+	z-index: 1000;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+	transition: transform 0.8s, opacity 0.8s;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.nav--next {
+	bottom: 1rem;
+	right: 1rem;
+}
+
+.icon--navarrow-next {
+	transform: rotate(45deg);
+}
+
+.nav--prev {
+	top: 1rem;
+	left: 1rem;
+}
+
+.icon--navarrow-prev {
+	transform: rotate(-135deg);
+}
+
+.slideshow--previewopen .nav {
+	opacity: 0;
+	transition-duration: 0.4s;
+}
+
+.slideshow--previewopen .nav--next {
+	transform: translate3d(100%, 100%, 0);
+}
+
+.slideshow--previewopen .nav--prev {
+	transform: translate3d(-100%, -100%, 0);
+}
+
+.slide__img {
+	width: 18em;
+	height: 60em;
+	left: 0;
+	top: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	position: absolute;
+	pointer-events: none;
+	transform: scale3d(1.01,1.01,1);
+}
+
+.js .slide__img-wrap, 
+.js .slide__title-wrap,
+.js .slide__side {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.js .slide--current .slide__img-wrap {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.slide--visible .slide__img-wrap {
+	pointer-events: auto;
+}
+
+.slide__title-wrap {
+	justify-self: flex-end;
+	width: 100%;
+	position: relative;
+	z-index: 1000;
+}
+
+.slide__number {
+	display: block;
+	font-size: 1rem;
+	font-weight: bold;
+	color:#000;
+    padding-top:30rem;
+        ;
+}
+
+.slide__number::before {
+	content: "\2014";
+	display: inline-block;
+	margin: 0 1rem 0 0;
+}
+
+.slide__title,
+.slide__subtitle,
+.slide__side {
+	display: none;
+	color:#000000;
+}
+
+.content {
+	position: ;
+	top: 10rem;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 10rem);
+	pointer-events: none;
+	z-index: 100;
+}
+
+.content__item {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10vh 5vw;
+	overflow: auto;
+}
+
+.content__item--current,
+.content__item--current ~ .content__close {
+	pointer-events: auto;
+}
+
+.content__close {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	background: none;
+	color: currentColor;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.icon--longarrow {
+	width: 2rem;
+}
+
+.content__close:focus {
+	outline: none;
+}
+
+.content__number {
+	font-weight: bold;
+}
+
+.content__number::before {
+	content: "\2014";
+	display: inline-block;
+	margin: 0 1rem 0 0;
+}
+
+.content__title {
+	margin: 0.5rem 0;
+	font-size: 1.2rem;
+}
+
+.content__subtitle {
+	margin: 0 0 0.2rem;
+	font-size: 0.8rem;
+	font-weight: normal;
+}
+
+.content__text {
+	font-size: 0.6rem;
+}
+
+.js .content__title,
+.js .content__subtitle,
+.js .content__number,
+.js .content__text,
+.js .content__close {
+	opacity: 0;
+}
+
+@media (max-width: 599px) {
+   .slide__img { width: 100px; height: 550px; }
+    .codrops-header {
+text-align: right;
+padding-right: 4rem;
+}
+.content__item--current,
+.content__item--current ~ .content__close {
+	pointer-events: auto;
+    text-align: right;
+    padding-top: 10rem;
+}
+}
+@media (min-width: 600px) and (max-width: 959px) {
+   .slide__img { width: 135px; height:750px; }
+    .codrops-header {
+text-align: right;
+padding-right: 9rem;
+}
+}
+@media (min-width: 960px) {
+   .slide__img { width: 190px; height:1000px; }
+    .codrops-header {
+text-align: right;
+padding-right: 12rem;
+padding-top:1rem;
+       
+}
+     body {
+		padding: 0;
+	}
+	.frame {
+		top: 0;
+		display: grid;
+		align-items: start;
+		justify-items: end;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		grid-template-areas: '... header';
+
+}
+
+    
+
+@media screen and (min-width: 53em) {
+	body {
+		padding: 0;
+	}
+	.frame {
+		top: 0;
+		display: grid;
+		align-items: start;
+		justify-items: end;
+		grid-template-columns: 100%;
+		grid-template-rows: 100%;
+		grid-template-areas: '... header';
+
+	}
+	.codrops-header {
+		grid-area: header;
+		padding: 1rem 0.5rem;
+		display: block;
+        text-align: right;
+
+	}
+	.codrops-header__title {
+		padding: 0 0.5rem;
+	}
+	.codrops-links {
+		margin: 0.25rem auto 0 0.25rem;
+	}
+	.slideshow {
+		height: 100vh;
+		grid-template-columns: 27% 27% 27%;
+		grid-column-gap: 9.5%;
+	}
+	.slide {
+		padding: 10vh 0 7vh;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.slide__side {
+		margin: 0 0 0 -1.85rem;
+	}
+	.slide__title-wrap {
+		margin: 0 0 0 -1.85rem;
+	}
+	.slide__title,
+	.slide__subtitle,
+	.slide__side {
+		display: block;
+	}
+	.slide__title {
+		font-size: 3.25rem;
+		margin: 0 0 0.25rem;
+	}
+	.slide__subtitle {
+		font-weight: normal;
+		margin: 0;
+		min-height: 50px;
+	}
+	.slide__side {
+		color: var(--color-side);
+		position: relative;
+		-webkit-writing-mode: vertical-rl;
+		writing-mode: vertical-rl;
+		transform: rotate(180deg);
+		z-index: 1000;
+	}
+	.content {
+		top: 0;
+		height: 100%;
+	}
+	.content__item {
+		padding: calc(10vh + 5rem) 0 7vh;
+		width: 60%;
+		right: 2%;
+		overflow: visible;
+	}
+	.content__close {
+		left: 42%;
+		top: calc(10vh + 1rem);
+	}
+	.content__number {
+		position: absolute;
+		bottom: 7vh;
+		right: 0;
+		font-size: 2rem;
+	}
+	.content__title {
+		font-size: 7vw;
+	}
+	.content__subtitle {
+		font-size: 0.8rem;
+		margin-bottom: 7.5vh;
+	}
+	.content__text {
+		font-size: 0.95rem;
+		column-count: 2;
+		column-gap: 2rem;
+		max-width: 600px;
+		text-align: justify;
+	}
+}
 
