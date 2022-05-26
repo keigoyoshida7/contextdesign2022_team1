@@ -198,8 +198,8 @@ a:focus {
 	height: 80%;
 	align-self: center;
 	position: relative;
-	margin: -40px 0 0 0;
-	right: -20px;
+	margin: 10px -40px 20px -40px;
+	right: 50px;
 }
 
 .nav {
@@ -248,8 +248,8 @@ a:focus {
 }
 
 .slide__img {
-	width: 100%;
-	height: 100%;
+	width: 18em;
+	height: 60em;
 	left: 0;
 	top: 0;
 	background-size: cover;
